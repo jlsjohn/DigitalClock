@@ -48,35 +48,14 @@
 **
 ****************************************************************************/
 
-#include <QtWidgets>
+#include <QApplication>
 
-#include "DigitalClock.h"
+#include "digitalclock.h"
 
-//! [0]
-DigitalClock::DigitalClock(QWidget *parent)
-    : QLCDNumber(parent)
+int main(int argc, char *argv[])
 {
-    setSegmentStyle(Filled);
-
-    QTimer *timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(showTime()));
-    timer->start(1000);
-
-    showTime();
-
-    setWindowTitle(tr("Digital Clock"));
-    resize(150, 60);
+    QApplication app(argc, argv);
+    DigitalClock clock;
+    clock.show();
+    return app.exec();
 }
-//! [0]
-
-//! [1]
-void DigitalClock::showTime()
-//! [1] //! [2]
-{
-    QTime time = QTime::currentTime();
-    QString text = time.toString("hh:mm");
-    if ((time.second() % 2) == 0)
-        text[2] = ' ';
-    display(text);
-}
-//! [2]
