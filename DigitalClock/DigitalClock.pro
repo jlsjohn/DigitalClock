@@ -1,9 +1,9 @@
 QT += widgets
 
-HEADERS       = digitalclock.h
-SOURCES       = digitalclock.cpp \
+HEADERS       = DigitalClock.h
+SOURCES       = DigitalClock.cpp \
                 main.cpp
 
 # install
-target.path = $$[QT_INSTALL_EXAMPLES]/widgets/widgets/digitalclock
+target.path = $$[QT_INSTALL_EXAMPLES]/widgets/widgets/Digitalclock
 INSTALLS += target

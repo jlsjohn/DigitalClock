@@ -50,7 +50,7 @@
 
 #include <QApplication>
 
-#include "digitalclock.h"
+#include "DigitalClock.h"
 
 int main(int argc, char *argv[])
 {
